@@ -11,6 +11,13 @@ import UIKit
 
 class MainPageNewsCell: UITableViewCell {
 
+    var singleNewsObject: NewsFeedModel?
+    {
+        didSet
+        {
+            //update cell
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -56,10 +56,9 @@ class API {
                 let jsonDecoder = JSONDecoder()
                 if let data = data
                 {
-                if let errorCheck = try? jsonDecoder.decode(Post.self, from: data) {
+                
                     
-                    
-                    if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                    if let utf8Text = String(data: data, encoding: .utf8) {
                         
                         do {
                             let reponseDict = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
@@ -67,12 +66,8 @@ class API {
                             let error : String = reponseDict?["error"] as? String ?? "Something went wrong."
                             //pass complition
 //                            FadeInOutLoadingAnimation.removeContent()
-                            completion(errorCheck.status == 200,data, error=="" ? nil : error)
+                            completion(true,data, error=="" ? nil : error)
                             
-                        } catch {
-                            print(error.localizedDescription)
-//                            FadeInOutLoadingAnimation.removeContent()
-                            completion(errorCheck.status == 200,data, error.localizedDescription)
                         }
                         
                         #if DEBUG
@@ -82,7 +77,7 @@ class API {
 //                        FadeInOutLoadingAnimation.removeContent()
                         completion(false,nil,"something went wrong")
                     }
-                    }
+                    
                     
                 }
                 else {

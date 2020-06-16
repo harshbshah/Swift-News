@@ -8,8 +8,8 @@
 
 import Foundation
 // MARK: - Welcome
-struct Post: Codable {
-    let status: Int
+struct Get: Codable {
+    let Kin: Int
     let message: String?
     let error: String?
 }

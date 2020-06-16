@@ -31,7 +31,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Swift News" id="rdp-6x-jvL"/>
                     <connections>
-                        <segue destination="BCV-9C-fbG" kind="show" id="riK-DJ-vmt"/>
+                        <outlet property="newsListTable" destination="iqw-Fk-I2T" id="2pD-N4-50G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -41,7 +41,7 @@
         <!--Detail View Controller-->
         <scene sceneID="fJV-Cd-gEM">
             <objects>
-                <viewController id="BCV-9C-fbG" customClass="DetailViewController" customModule="Swift_News" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BCV-9C-fbG" customClass="DetailViewController" customModule="Swift_News" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Mc-cH-uJZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
