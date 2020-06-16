@@ -21,6 +21,8 @@
 		962BE49B2499140B004C7ED5 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962BE49A2499140B004C7ED5 /* String.swift */; };
 		962BE49D24992F7A004C7ED5 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962BE49C24992F7A004C7ED5 /* ImageCache.swift */; };
 		962BE4A12499469D004C7ED5 /* NSConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962BE4A02499469D004C7ED5 /* NSConstraint.swift */; };
+		96EC977F249989AD0077D32A /* ReadMe.md in Resources */ = {isa = PBXBuildFile; fileRef = 96EC977E249989AD0077D32A /* ReadMe.md */; };
+		96EC978124998F440077D32A /* FadeInFadeOutAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EC978024998F440077D32A /* FadeInFadeOutAnimation.swift */; };
 		E0D3AB2E3F1E953D04A094D8 /* Pods_Swift_News.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 536FD7F13B842B828BB8CB33 /* Pods_Swift_News.framework */; };
 		F15878DA249710DE00965DBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15878D9249710DE00965DBC /* AppDelegate.swift */; };
 		F15878DC249710DE00965DBC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15878DB249710DE00965DBC /* SceneDelegate.swift */; };
@@ -60,6 +62,8 @@
 		962BE49A2499140B004C7ED5 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		962BE49C24992F7A004C7ED5 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		962BE4A02499469D004C7ED5 /* NSConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSConstraint.swift; sourceTree = "<group>"; };
+		96EC977E249989AD0077D32A /* ReadMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
+		96EC978024998F440077D32A /* FadeInFadeOutAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeInFadeOutAnimation.swift; sourceTree = "<group>"; };
 		A8D1366DD1529C7203D7A9A6 /* Pods-Swift News.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift News.release.xcconfig"; path = "Target Support Files/Pods-Swift News/Pods-Swift News.release.xcconfig"; sourceTree = "<group>"; };
 		BB22EDDBBD70EB1361A4E525 /* Pods_Swift_NewsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift_NewsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F15878D6249710DE00965DBC /* Swift News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +125,7 @@
 			children = (
 				962BE4872498E6F6004C7ED5 /* MainPageNewsCell.xib */,
 				962BE4882498E6F6004C7ED5 /* MainPageNewsCell.swift */,
+				96EC978024998F440077D32A /* FadeInFadeOutAnimation.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -188,6 +193,7 @@
 		F15878D8249710DE00965DBC /* Swift News */ = {
 			isa = PBXGroup;
 			children = (
+				96EC977E249989AD0077D32A /* ReadMe.md */,
 				F15878D9249710DE00965DBC /* AppDelegate.swift */,
 				F15878DB249710DE00965DBC /* SceneDelegate.swift */,
 				962BE48D2498E990004C7ED5 /* Networking */,
@@ -301,6 +307,7 @@
 				F15878E6249710E100965DBC /* Assets.xcassets in Resources */,
 				962BE4892498E6F6004C7ED5 /* MainPageNewsCell.xib in Resources */,
 				F15878E1249710DE00965DBC /* Main.storyboard in Resources */,
+				96EC977F249989AD0077D32A /* ReadMe.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +400,7 @@
 				962BE4992498F2F6004C7ED5 /* Constant.swift in Sources */,
 				962BE4952498ED2D004C7ED5 /* UIApplicationExtension.swift in Sources */,
 				962BE4912498E9DB004C7ED5 /* URLManagement.swift in Sources */,
+				96EC978124998F440077D32A /* FadeInFadeOutAnimation.swift in Sources */,
 				962BE4932498ECF0004C7ED5 /* Reachability.swift in Sources */,
 				F15878DA249710DE00965DBC /* AppDelegate.swift in Sources */,
 				962BE49B2499140B004C7ED5 /* String.swift in Sources */,

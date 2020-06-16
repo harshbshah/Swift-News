@@ -21,5 +21,6 @@ class Defaults
 {
     static let defaultThumbnailImage = "defaultImage"
     static let defaultNoDescriptioText = "No Description Available"
+    static let loadingIcon = "swifthero"
 }
 

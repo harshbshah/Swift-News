@@ -38,7 +38,9 @@ class API {
         }
         
       
-
+        if let vc = UIApplication.getTopViewController(){
+            FadeInOutLoadingAnimation.createContent(superview: vc.view)
+        }
      
         var headers: HTTPHeaders = [:]
             
@@ -61,7 +63,7 @@ class API {
                         
                             let error : String = reponseDict?["error"] as? String ?? "Something went wrong."
                             //pass complition
-//                            FadeInOutLoadingAnimation.removeContent()
+                        FadeInOutLoadingAnimation.removeContent()
                             completion(true,data, error=="" ? nil : error)
                             
                         }
@@ -70,7 +72,7 @@ class API {
                         print("Data: \(utf8Text)")
                         #endif
                     }else{
-//                        FadeInOutLoadingAnimation.removeContent()
+                        FadeInOutLoadingAnimation.removeContent()
                         completion(false,nil,"something went wrong")
                     }
                     
@@ -78,12 +80,12 @@ class API {
                 }
                 else {
                     print("Error")
-//                    FadeInOutLoadingAnimation.removeContent()
+                    FadeInOutLoadingAnimation.removeContent()
                     completion(false,nil,"something went wrong")
                 }
             case let .failure(error):
                 print(error)
-//                FadeInOutLoadingAnimation.removeContent()
+                FadeInOutLoadingAnimation.removeContent()
                 completion(false,nil,"something went wrong")
             }
         }
