@@ -11,7 +11,7 @@ import UIKit
 struct NewsFeedModel{
   var articleTitle : String
   var articleBody : String
-  var articleThumbUrl : String
+  var articleThumbUrl : String?
   var articleImageURL : String
   var articleThumbnailHeight : CGFloat
   var articleThumbnailbWidth : CGFloat

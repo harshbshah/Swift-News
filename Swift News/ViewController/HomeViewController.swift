@@ -7,6 +7,7 @@
 //
 
 import UIKit
+let imageCache = NSCache<NSString, UIImage>()
 
 class HomeViewController: UIViewController {
     @IBOutlet weak var newsListTable: UITableView!
@@ -16,7 +17,7 @@ class HomeViewController: UIViewController {
     {
         didSet
         {
-            self.newsListTable.reloadData()
+//            self.newsListTable.reloadData()
         }
     }
     override func viewDidLoad() {
@@ -62,6 +63,7 @@ func getDataFromServer()
             self.newsFeedModels = arrayJson.compactMap { (objJson) -> NewsFeedModel in
               return NewsFeedModel.init(jsonData: objJson)
             }
+                self.newsListTable.reloadData()
             }
             else{
                 let alertView = UIAlertController.init(title: "Sorry", message: error ?? "Failed to fetch data from server.", preferredStyle: .alert)
@@ -77,7 +79,7 @@ func setupUI()
 {
     newsListTable.delegate = self
     newsListTable.dataSource = self
-    newsListTable.register(MainPageNewsCell.self, forCellReuseIdentifier: StoryBoardID.CellID.mainPageNewsCell)
+    newsListTable.register(UINib.init(nibName: StoryBoardID.CellID.mainPageNewsCell, bundle: nil), forCellReuseIdentifier: StoryBoardID.CellID.mainPageNewsCell)
     setupTableViewUI()
 }
     
@@ -98,7 +100,7 @@ extension HomeViewController{
 
 extension HomeViewController : UITableViewDelegate, UITableViewDataSource{
       func setupTableViewUI(){
-        self.newsListTable.estimatedRowHeight = 50
+        self.newsListTable.estimatedRowHeight = 150
         self.newsListTable.rowHeight = UITableView.automaticDimension
         newsListTable.tableFooterView = UIView()
         activatePullTorefresh()
@@ -107,6 +109,9 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource{
         return newsFeedModels?.count ?? 0
 
       }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return self.view.frame.height / 4
+    }
       func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: StoryBoardID.CellID.mainPageNewsCell) as? MainPageNewsCell
@@ -115,7 +120,9 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource{
         }
         if(newsFeedModels?.count ?? 0 > indexPath.row)
         {
+            cell.awakeFromNib()
             cell.singleNewsObject = newsFeedModels?[indexPath.row]
+            
         }
         return cell
       }

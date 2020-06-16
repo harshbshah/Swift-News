@@ -12,10 +12,13 @@ class StoryBoardID
 {
     struct CellID
     {
-        static let mainPageNewsCell = "MainPageCell"
+        static let mainPageNewsCell = "MainPageNewsCell"
     }
     static let detailViewController = "DetailViewController"
 
 }
-
+class Defaults
+{
+    static let defaultThumbnailImage = "defaultImage"
+}
 
