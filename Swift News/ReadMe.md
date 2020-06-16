@@ -1,5 +1,6 @@
 Swift News
 
+
 HomeViewController - 
     Loads the data from API. and show the news on Table View.
     
@@ -14,7 +15,7 @@ Networking Group-
     It has URL and API call function which helps to fetch data from server.
 
 Extension Group-
-    It contains System class extenstion.
+    It contains System classes extention.
     
 NewsFeedModel-
     It defines schema for each article.

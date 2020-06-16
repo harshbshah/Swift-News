@@ -37,7 +37,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="qVH-Tx-mwb" firstAttribute="width" relation="lessThanOrEqual" secondItem="7DZ-MC-oBv" secondAttribute="width" multiplier="0.4" constant="1" id="70N-7X-r52"/>
+                            <constraint firstItem="qVH-Tx-mwb" firstAttribute="width" secondItem="7DZ-MC-oBv" secondAttribute="width" multiplier="0.4" constant="1" id="70N-7X-r52"/>
                             <constraint firstItem="qVH-Tx-mwb" firstAttribute="height" secondItem="7DZ-MC-oBv" secondAttribute="height" multiplier="0.5" constant="-20" id="9VQ-WN-6nt"/>
                             <constraint firstItem="FBb-Zp-NZI" firstAttribute="leading" secondItem="qVH-Tx-mwb" secondAttribute="trailing" id="EPN-A3-1ft"/>
                             <constraint firstItem="vkR-hF-sf2" firstAttribute="leading" secondItem="7DZ-MC-oBv" secondAttribute="leading" constant="20" id="EnX-Yh-sC7"/>
