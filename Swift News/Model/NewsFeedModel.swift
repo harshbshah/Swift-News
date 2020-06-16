@@ -12,7 +12,7 @@ struct NewsFeedModel{
   var articleTitle : String
   var articleBody : String
   var articleThumbUrl : String?
-  var articleImageURL : String
+  var articleImageURL : String?
   var articleThumbnailHeight : CGFloat
   var articleThumbnailbWidth : CGFloat
   //MARK: Initailise objects from JSON

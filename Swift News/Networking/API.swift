@@ -34,15 +34,11 @@ class API {
             }else{
                  completion(false,nil,"No internet connection")
             }
-            //alertController.show()
             return
         }
         
       
-//        if let vc = UIApplication.getTopViewController(){
-//             FadeInOutLoadingAnimation.createContent(superview: vc.view)
-//         }
-               
+
      
         var headers: HTTPHeaders = [:]
             
@@ -62,7 +58,7 @@ class API {
                         
                         do {
                             let reponseDict = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-                            //?? [String:Any]()
+                        
                             let error : String = reponseDict?["error"] as? String ?? "Something went wrong."
                             //pass complition
 //                            FadeInOutLoadingAnimation.removeContent()

@@ -13,11 +13,12 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var newsListTable: UITableView!
     let refreshControl = UIRefreshControl()
     
+    ///Stores list in array, each elemnet is a row data
     var newsFeedModels:[NewsFeedModel]?
     {
         didSet
         {
-//            self.newsListTable.reloadData()
+      
         }
     }
     override func viewDidLoad() {
@@ -25,13 +26,13 @@ class HomeViewController: UIViewController {
         self.title = "Swift News"
         setupUI()
         getDataFromServer()
-        
-        // Do any additional setup after loading the view.
     }
 
 
 }
 
+
+// MARK: Inital functions
 extension HomeViewController{
 func getDataFromServer()
 {

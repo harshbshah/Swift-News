@@ -17,19 +17,19 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7DZ-MC-oBv">
-                        <rect key="frame" x="0.0" y="0.0" width="399" height="228"/>
+                        <rect key="frame" x="40" y="20" width="319" height="188"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="qVH-Tx-mwb">
-                                <rect key="frame" x="20" y="20" width="160.5" height="94"/>
+                                <rect key="frame" x="20" y="20" width="128.5" height="74"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FBb-Zp-NZI">
-                                <rect key="frame" x="180.5" y="20" width="198.5" height="94"/>
+                                <rect key="frame" x="148.5" y="20" width="150.5" height="74"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Body" lineBreakMode="tailTruncation" numberOfLines="5" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vkR-hF-sf2">
-                                <rect key="frame" x="20" y="114" width="359" height="94"/>
+                                <rect key="frame" x="20" y="94" width="279" height="74"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -53,10 +53,10 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="7DZ-MC-oBv" secondAttribute="trailing" id="2L0-Le-2GN"/>
-                    <constraint firstItem="7DZ-MC-oBv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ObE-Yx-gpl"/>
-                    <constraint firstItem="7DZ-MC-oBv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="RnE-Mb-3QU"/>
-                    <constraint firstAttribute="bottom" secondItem="7DZ-MC-oBv" secondAttribute="bottom" id="jtp-Zv-NaY"/>
+                    <constraint firstAttribute="trailing" secondItem="7DZ-MC-oBv" secondAttribute="trailing" constant="40" id="2L0-Le-2GN"/>
+                    <constraint firstItem="7DZ-MC-oBv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="ObE-Yx-gpl"/>
+                    <constraint firstItem="7DZ-MC-oBv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="40" id="RnE-Mb-3QU"/>
+                    <constraint firstAttribute="bottom" secondItem="7DZ-MC-oBv" secondAttribute="bottom" constant="20" id="jtp-Zv-NaY"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

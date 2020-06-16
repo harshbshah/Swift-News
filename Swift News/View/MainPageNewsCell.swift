@@ -12,7 +12,6 @@ import UIKit
 class MainPageNewsCell: UITableViewCell {
     
     @IBOutlet weak var wrapperView: UIView!
-    
     @IBOutlet weak var imageThumbnailWidth: NSLayoutConstraint!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var bodyLabel: UILabel!
@@ -23,9 +22,7 @@ class MainPageNewsCell: UITableViewCell {
     {
         didSet
         {
-            //update cell
             updateCell(self.singleNewsObject)
-            
         }
     }
     override func awakeFromNib() {
@@ -45,36 +42,52 @@ class MainPageNewsCell: UITableViewCell {
         DispatchQueue.main.async {
                         if let obj = obj
                         {
-                           
+                        self.applyShadow()
                         self.bodyLabel.text = obj.articleBody
-                         self.titleLabel.text = obj.articleTitle
-                            guard let thumbURL = obj.articleThumbUrl
-                                else{
-                                    self.thumbnailImage = nil
-                                    self.updateThumbnail()
-                                    
-                                    return
-                            }
-                            guard let url = URL.init(string: thumbURL)
-                            else{
-                                self.thumbnailImage = nil
-                                self.updateThumbnail()
-                                
-                                return
-                            }
-                            MTAPIClient.downloadImage(url: url, completion: {
-                                (image,error) in
-                                if let image = image
-                                {
-                                    self.thumbnailImage = image
-                                    self.updateThumbnail()
-                                }
-                            })
+                        self.titleLabel.text = obj.articleTitle
+                        self.getThumbnail(obj)
                         }
             
         
                     }
         
+    }
+    
+    
+}
+// MARK: UI functions
+extension MainPageNewsCell{
+    func getThumbnail(_ obj: NewsFeedModel)
+    {
+        guard let thumbURL = obj.articleThumbUrl
+            else{
+                self.thumbnailImage = nil
+                self.updateThumbnail()
+                
+                return
+        }
+        guard let url = URL.init(string: thumbURL)
+        else{
+            self.thumbnailImage = nil
+            self.updateThumbnail()
+            
+            return
+        }
+        MTAPIClient.downloadImage(url: url, completion: {
+            (image,error) in
+            if let image = image
+            {
+                self.thumbnailImage = image
+                self.updateThumbnail()
+            }
+        })
+    }
+    func applyShadow()
+    {
+        self.wrapperView.layer.cornerRadius = 5
+                                   self.wrapperView.layer.shadowOpacity = 1
+                                   self.wrapperView.layer.shadowColor = UIColor.lightGray.cgColor
+                                   self.wrapperView.layer.shadowOffset = CGSize(width: 5, height: 5)
     }
     func updateThumbnail()
     {
@@ -95,6 +108,5 @@ class MainPageNewsCell: UITableViewCell {
             }
         }
     }
-    
 }
 

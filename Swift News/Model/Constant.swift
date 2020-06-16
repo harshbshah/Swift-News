@@ -20,5 +20,6 @@ class StoryBoardID
 class Defaults
 {
     static let defaultThumbnailImage = "defaultImage"
+    static let defaultNoDescriptioText = "No Description Available"
 }
 
