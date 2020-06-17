@@ -98,6 +98,7 @@ extension MainPageNewsCell{
         if let image = thumbnailImage
         {
             DispatchQueue.main.async {
+                self.newsThumbnail.isHidden = false
                 self.newsThumbnail.image = image
                  self.titleHeightConstraint = self.titleHeightConstraint.setMultiplier(multiplier: 0.4)
                 self.thumbnailHeightConstraint.constant = self.frame.size.getimageAspectRatioHeightAccordingToWidth(imageSize: CGSize.init(width: self.singleNewsObject?.articleThumbnailbWidth ?? 0, height: self.singleNewsObject?.articleThumbnailHeight ?? 0))
