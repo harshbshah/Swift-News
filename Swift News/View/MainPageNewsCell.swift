@@ -11,12 +11,15 @@ import UIKit
 
 class MainPageNewsCell: UITableViewCell {
     
+    @IBOutlet weak var titleHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var thumbnailHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var wrapperView: UIView!
-    @IBOutlet weak var imageThumbnailWidth: NSLayoutConstraint!
+   
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var bodyLabel: UILabel!
+ 
     @IBOutlet weak var newsThumbnail: UIImageView!
     var thumbnailImage:UIImage?
+    var imageRemoved:Bool = false
     var isCellLoaded:Bool = false
     var singleNewsObject: NewsFeedModel?
     {
@@ -28,6 +31,7 @@ class MainPageNewsCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
         self.isCellLoaded = true
 
     }
@@ -43,7 +47,7 @@ class MainPageNewsCell: UITableViewCell {
                         if let obj = obj
                         {
                         self.applyShadow()
-                        self.bodyLabel.text = obj.articleBody
+                        
                         self.titleLabel.text = obj.articleTitle
                         self.getThumbnail(obj)
                         }
@@ -95,7 +99,9 @@ extension MainPageNewsCell{
         {
             DispatchQueue.main.async {
                 self.newsThumbnail.image = image
-                self.imageThumbnailWidth = self.imageThumbnailWidth.setMultiplier(multiplier: 0.4)
+                 self.titleHeightConstraint = self.titleHeightConstraint.setMultiplier(multiplier: 0.4)
+                self.thumbnailHeightConstraint.constant = self.frame.size.getimageAspectRatioHeightAccordingToWidth(imageSize: CGSize.init(width: self.singleNewsObject?.articleThumbnailbWidth ?? 0, height: self.singleNewsObject?.articleThumbnailHeight ?? 0))
+                
                 
             }
             
@@ -103,8 +109,10 @@ extension MainPageNewsCell{
         else
         {
             DispatchQueue.main.async {
-                self.newsThumbnail.image = UIImage.init(named: Defaults.defaultThumbnailImage)
-                 self.imageThumbnailWidth = self.imageThumbnailWidth.setMultiplier(multiplier: 0.04)
+                self.newsThumbnail.isHidden = true
+                self.thumbnailHeightConstraint.constant = 0
+                self.titleHeightConstraint = self.titleHeightConstraint.setMultiplier(multiplier: 1.0)
+                
             }
         }
     }
