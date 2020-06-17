@@ -101,8 +101,8 @@ extension HomeViewController{
 
 extension HomeViewController : UITableViewDelegate, UITableViewDataSource{
       func setupTableViewUI(){
-        self.newsListTable.estimatedRowHeight = 150
-        self.newsListTable.rowHeight = UITableView.automaticDimension
+//        self.newsListTable.estimatedRowHeight = 150
+//        self.newsListTable.rowHeight = UITableView.automaticDimension
         newsListTable.tableFooterView = UIView()
         activatePullTorefresh()
       }
@@ -111,7 +111,11 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource{
 
       }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return self.view.frame.height / 4
+        if ((newsFeedModels?[indexPath.row].articleThumbUrl) != ""){
+            return 300
+        }else {
+            return 150
+        }
     }
       func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         

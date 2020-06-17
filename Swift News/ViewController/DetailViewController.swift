@@ -42,7 +42,8 @@ class DetailViewController: UIViewController {
         }
         setupCoverImage()
         setupGradient()
-        self.titleLabel.text = newsFeedModel?.articleTitle
+        navigationItem.title = newsFeedModel?.articleTitle
+
         
     }
     
